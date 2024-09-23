@@ -4,7 +4,7 @@ import Footer from "../../pages/Shared/Footer/Footer";
 
 const MainLayout = () => {
   return (
-    <div>
+    <div className="bg-colorContainer">
       <NavBar />
       <Outlet />
       <Footer />
