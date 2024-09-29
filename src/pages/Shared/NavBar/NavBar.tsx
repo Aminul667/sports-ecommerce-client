@@ -2,8 +2,8 @@ import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <nav className="bg-colorContainer text-white p-4">
-      <div className="container mx-auto flex justify-between items-center">
+    <nav className="py-4">
+      <div className="container mx-auto flex justify-between items-center border-b-red-200 border-b-2">
         {/* Left: Company Name */}
         <div className="text-2xl font-bold">Company Name</div>
 
