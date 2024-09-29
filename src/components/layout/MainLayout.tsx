@@ -1,10 +1,11 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "../../pages/Shared/NavBar/NavBar";
 import Footer from "../../pages/Shared/Footer/Footer";
+import { FC } from "react";
 
-const MainLayout = () => {
+const MainLayout: FC = () => {
   return (
-    <div className="bg-colorContainer">
+    <div className="my-5">
       <NavBar />
       <Outlet />
       <Footer />
