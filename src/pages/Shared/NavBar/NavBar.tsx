@@ -1,56 +1,129 @@
 import { NavLink } from "react-router-dom";
 
-const NavBar = () => {
+const Navbar = () => {
   return (
-    <nav className="py-4">
-      <div className="container mx-auto flex justify-between items-center border-b-red-200 border-b-2">
-        {/* Left: Company Name */}
-        <div className="text-2xl font-bold">Company Name</div>
-
-        {/* Center: Navigation Links */}
-        <div className="space-x-8 hidden md:flex">
+    <nav className="bg-white shadow-md">
+      <div className="container mx-auto px-4 py-2 flex justify-between items-center">
+        {/* Left side - Logo and Links */}
+        <div className="flex items-center space-x-6">
+          {/* Company Logo */}
           <NavLink
             to="/"
-            end
-            className="hover:text-gray-400"
-            style={({ isActive }) =>
-              isActive ? { color: "blue", fontWeight: "bold" } : undefined
+            className={({ isActive }) =>
+              isActive
+                ? "text-blue-500 font-bold"
+                : "text-gray-700 hover:text-gray-900"
             }
           >
-            Home
+            CompanyLogo
           </NavLink>
-          <NavLink
-            to="/about"
-            className="hover:text-gray-400"
-            style={({ isActive }) =>
-              isActive ? { color: "blue", fontWeight: "bold" } : undefined
-            }
-          >
-            About Us
-          </NavLink>
+
+          {/* Dropdown Link */}
+          <div className="relative group">
+            <button className="text-gray-700 hover:text-gray-900 focus:outline-none">
+              Products
+            </button>
+            <div className="absolute hidden group-hover:block bg-white shadow-lg mt-2 rounded-md z-50">
+              <NavLink
+                to="/products/product1"
+                className={({ isActive }) =>
+                  isActive
+                    ? "block px-4 py-2 text-blue-500 font-bold"
+                    : "block px-4 py-2 text-gray-600 hover:bg-gray-100"
+                }
+              >
+                Product 1
+              </NavLink>
+              <NavLink
+                to="/products/product2"
+                className={({ isActive }) =>
+                  isActive
+                    ? "block px-4 py-2 text-blue-500 font-bold"
+                    : "block px-4 py-2 text-gray-600 hover:bg-gray-100"
+                }
+              >
+                Product 2
+              </NavLink>
+              <NavLink
+                to="/products/product3"
+                className={({ isActive }) =>
+                  isActive
+                    ? "block px-4 py-2 text-blue-500 font-bold"
+                    : "block px-4 py-2 text-gray-600 hover:bg-gray-100"
+                }
+              >
+                Product 3
+              </NavLink>
+            </div>
+          </div>
+
+          {/* Other Links */}
           <NavLink
             to="/all-products"
-            className="hover:text-gray-400"
-            style={({ isActive }) =>
-              isActive ? { color: "blue", fontWeight: "bold" } : undefined
+            className={({ isActive }) =>
+              isActive
+                ? "text-blue-500 font-bold"
+                : "text-gray-700 hover:text-gray-900"
             }
           >
-            All Products
+            All Product
+          </NavLink>
+          <NavLink
+            to="/products"
+            className={({ isActive }) =>
+              isActive
+                ? "text-blue-500 font-bold"
+                : "text-gray-700 hover:text-gray-900"
+            }
+          >
+            Products
           </NavLink>
         </div>
 
-        {/* Right: Login and Cart */}
-        <div className="flex space-x-4">
-          <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
-            Login
-          </button>
-          <button className="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded">
+        {/* Right side - Search Bar, Cart, Favorite, and User */}
+        <div className="flex items-center space-x-6">
+          {/* Search Bar */}
+          <div className="relative">
+            <input
+              type="text"
+              className="border border-gray-300 rounded-md py-1 px-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Search..."
+            />
+          </div>
+
+          {/* Cart Icon */}
+          <NavLink
+            to="/cart"
+            className={({ isActive }) =>
+              isActive ? "text-blue-500" : "text-gray-700 hover:text-gray-900"
+            }
+          >
             Cart
-          </button>
+          </NavLink>
+
+          {/* Favorite Icon */}
+          <NavLink
+            to="/favorites"
+            className={({ isActive }) =>
+              isActive ? "text-blue-500" : "text-gray-700 hover:text-gray-900"
+            }
+          >
+            Favorite
+          </NavLink>
+
+          {/* User Icon */}
+          <NavLink
+            to="/profile"
+            className={({ isActive }) =>
+              isActive ? "text-blue-500" : "text-gray-700 hover:text-gray-900"
+            }
+          >
+            Profile
+          </NavLink>
         </div>
       </div>
     </nav>
   );
 };
 
-export default NavBar;
+export default Navbar;

@@ -1,12 +1,12 @@
 const Banner = () => {
   return (
-    <div>
+    <div className="mt-10">
       <div>
-        <h1 className="font-poppins text-8xl font-extrabold">Your Health,</h1>
-        <h1 className="font-poppins text-8xl font-extrabold">Our App</h1>
-        <p>We are dedicated to helping you achieve your health goals,</p>
-        <p>Providing you with the tools, support, and resources you need</p>
-        <p>to lead a healthier, happier life</p>
+        <h1 className="text-6xl font-bold font-poppins">Discover elegant &</h1>
+        <h1 className="text-6xl font-bold font-poppins my-6">affordable furniture</h1>
+        <h1 className="text-6xl font-bold font-poppins">for every room</h1>
+        <p className="text-2xl mt-7">Transform your furniture with sophisticated and stylish</p>
+        <p className="text-2xl mt-1">prices, and create a secure and inviting home</p>
       </div>
     </div>
   );
